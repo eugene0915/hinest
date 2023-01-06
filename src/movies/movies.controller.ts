@@ -44,11 +44,12 @@ export class MoviesController {
     // if we use @Put, it will update everything. 
     // so if we want to update specific things, we can use @Patch
     @Patch('/:id')
-    update(@Param('id') movieId: string, @Body() updateData) {
-        return {
-            updatedMovie: movieId,
-            ...updateData,
-        }
+    patch(@Param('id') movieId: string, @Body() updateData) {
+        // return {
+        //     updatedMovie: movieId,
+        //     ...updateData,
+        // }
+        return this.movieService.update(movieId, updateData);
     }
 
 
