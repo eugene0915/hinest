@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MoviesController } from './movies/movies.controller';
+import { MoviesService } from './movies/movies.service';
+
+// @ it is called decorator, NestJs lives with decorator
 
 @Module({
   imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [MoviesController],
+  providers: [MoviesService],
 })
-export class AppModule {}
+export class AppModule { }
+
+// controller take url and execute funtion.
+// url을 가지고 오고, 함수를 실행한다. 
+
