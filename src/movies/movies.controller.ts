@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Post, Delete, Put, Patch, Body, Query } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
+import { CreateMovieDto } from './dto/create-movie.dto';
 
 @Controller('movies')
 // this part controll our entry point of url 
@@ -31,7 +32,7 @@ export class MoviesController {
 
 
     @Post()
-    create(@Body() movieData) {
+    create(@Body() movieData :CreateMovieDto) {
         console.log(movieData)
         return this.movieService.create(movieData);
     }
