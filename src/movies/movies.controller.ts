@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Delete, Put, Patch, Body, Query } from '@nestjs/common';
+import { Controller, Get, Param, Post, Delete, Put, Patch, Body, Query, Res, Req } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
 import { CreateMovieDto } from './dto/create-movie.dto';
@@ -14,6 +14,10 @@ export class MoviesController {
 
     @Get()
     getAll(): Movie[] {
+        //@Req() req,@Res() res 
+        //
+        // console.log(req.json(), "req.json()")
+
         // return "this will return all movies"
         return this.movieService.getAll()
     }
@@ -34,7 +38,7 @@ export class MoviesController {
 
 
     @Post()
-    create(@Body() movieData :CreateMovieDto) {
+    create(@Body() movieData: CreateMovieDto) {
         console.log(movieData)
         return this.movieService.create(movieData);
     }
