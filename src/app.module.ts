@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { MoviesController } from './movies/movies.controller';
 import { MoviesService } from './movies/movies.service';
+import { MovieModule } from './movies/movies.module';
+import { NotionModule } from './notionData/notion.module';
 
 // @ it is called decorator, NestJs lives with decorator
 
 @Module({
-  imports: [],
+  imports: [MovieModule, NotionModule],
   controllers: [MoviesController],
   providers: [MoviesService],
 })
