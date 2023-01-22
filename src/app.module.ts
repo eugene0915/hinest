@@ -7,9 +7,11 @@ import { NotionModule } from './notionData/notion.module';
 // @ it is called decorator, NestJs lives with decorator
 
 @Module({
+
   imports: [MovieModule, NotionModule],
   controllers: [MoviesController],
   providers: [MoviesService],
+
 })
 export class AppModule { }
 
